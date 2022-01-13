@@ -1,0 +1,227 @@
+﻿<Window x:Class="clreports.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:clreports"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="285"
+        Width="250"
+        Topmost="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        PreviewMouseRightButtonDown="MainWindow_OnPreviewMouseRightButtonDown"
+        PreviewMouseMove="MainWindow_OnPreviewMouseMove"
+        Loaded="MainWindow_OnLoaded">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"></Setter>
+        </Style>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical">
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                언미
+            </TextBlock>
+            <TextBlock x:Name="UnmiText"
+                       DockPanel.Dock="Left"
+                       Margin="10">0
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                /
+            </TextBlock>
+            <TextBlock x:Name="UnmiRemainText"
+                       DockPanel.Dock="Left"
+                       Margin="10">
+                4
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                회
+            </TextBlock>
+            <Button x:Name="UnmiBtn" Click="UnmiBtn_Click"> + </Button>
+        </DockPanel>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                고룡
+            </TextBlock>
+            <TextBlock x:Name="DrxText"
+                       DockPanel.Dock="Left"
+                       Margin="10">0
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                /
+            </TextBlock>
+            <TextBlock x:Name="DrxRemainText"
+                       DockPanel.Dock="Left"
+                       Margin="10">
+                4
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                회
+            </TextBlock>
+            <Button x:Name="DrxBtn" Click="DrxBtn_Click">+</Button>
+        </DockPanel>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                쥉니
+            </TextBlock>
+            <TextBlock x:Name="JayText"
+                       DockPanel.Dock="Left"
+                       Margin="10">0
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                /
+            </TextBlock>
+            <TextBlock x:Name="JayRemainText"
+                       DockPanel.Dock="Left"
+                       Margin="10">
+                1
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                회
+            </TextBlock>
+            <Button x:Name="JayBtn" Click="JayBtn_Click">+</Button>
+        </DockPanel>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                오클
+            </TextBlock>
+            <TextBlock x:Name="OCText"
+                       DockPanel.Dock="Left"
+                       Margin="10">0
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                /
+            </TextBlock>
+            <TextBlock x:Name="OCRemainText"
+                       DockPanel.Dock="Left"
+                       Margin="10">
+                4
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                회
+            </TextBlock>
+            <Button x:Name="OCBtn" Click="OCBtn_Click">+</Button>
+        </DockPanel>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                성소
+            </TextBlock>
+            <TextBlock x:Name="SanctuaryText"
+                       DockPanel.Dock="Left"
+                       Margin="10">0
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                /
+            </TextBlock>
+            <TextBlock x:Name="SanctuaryRemainText"
+                       DockPanel.Dock="Left"
+                       Margin="10">
+                3
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                회
+            </TextBlock>
+            <Button x:Name="SanctuaryBtn" Click="SanctuaryBtn_Click">+</Button>
+        </DockPanel>
+        <DockPanel>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                재료
+            </TextBlock>
+            <TextBlock x:Name="MaterialText"
+                       DockPanel.Dock="Left"
+                       Margin="10">0
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                /
+            </TextBlock>
+            <TextBlock x:Name="MaterialRemainText"
+                       DockPanel.Dock="Left"
+                       Margin="10">
+                3
+            </TextBlock>
+            <TextBlock DockPanel.Dock="Left"
+                       Margin="10">
+                회
+            </TextBlock>
+            <Button x:Name="MaterialBtn" Click="MaterialBtn_Click">+</Button>
+        </DockPanel>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="CChangeBtn"
+                    Width="55"
+                    Height="35" Click="CChangeBtn_Click">캐챈</Button>
+            <Button x:Name="ExitBtn"
+                    Width="55"
+                    Height="35" Click="ExitBtn_Click">종료</Button>
+            <TextBlock TextAlignment="Center"
+                       VerticalAlignment="Center"> 투명도 </TextBlock>
+            <Slider x:Name="OpacitySlider"
+                    VerticalAlignment="Center"
+                    Width="100"
+                    Value="1"
+                    Minimum="0.1"
+                    Maximum="1"
+                    ValueChanged="OpacitySlider_OnValueChanged"></Slider>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Grid>
+                <ProgressBar x:Name="NowProgress"
+                             Width="150"
+                             Height="35"
+                             ValueChanged="NowProgress_OnValueChanged">
+                </ProgressBar>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Center">
+                    <TextBlock Foreground="Black"
+                               FontWeight="Bold">남은 캐릭터 수</TextBlock>
+                    <TextBlock x:Name="RemainChar"
+                               Foreground="Black"
+                               FontWeight="Bold">0</TextBlock>
+                    <TextBlock Foreground="Black"
+                               FontWeight="Bold">/</TextBlock>
+                    <TextBlock x:Name="MaxChar"
+                               Foreground="Black"
+                               FontWeight="Bold">0</TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Center">
+                    <TextBlock Foreground="Black"
+                               FontWeight="Bold">남은 숙제 수</TextBlock>
+                    <TextBlock x:Name="RemainReport"
+                               Foreground="Black"
+                               FontWeight="Bold">0</TextBlock>
+                    <TextBlock Foreground="Black"
+                               FontWeight="Bold">/</TextBlock>
+                    <TextBlock x:Name="MaxReport"
+                               Foreground="Black"
+                               FontWeight="Bold">0</TextBlock>
+                </StackPanel>
+            </Grid>
+            <TextBlock VerticalAlignment="Center">캐릭터수</TextBlock>
+            <TextBox x:Name="CharTextBox" Width="50" FontSize="22" TextAlignment="Center"
+                     PreviewKeyDown="CharTextBox_OnPreviewKeyDown">0</TextBox>
+        </StackPanel>
+    </StackPanel>
+</Window>
